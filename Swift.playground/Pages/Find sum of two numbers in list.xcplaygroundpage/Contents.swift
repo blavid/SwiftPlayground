@@ -99,6 +99,31 @@ findSumLinear(27, inList: numberList)
  1. Read the first number
  2. Store the complement in a set
  3. Read subsequent numbers. If that number exists in the set, we have a match.
+ 
+ This is O n
  */
 
-//func findSum(_ num:)
+func findSumInUnordered(_ num: Int, inList numberList: [Int]) -> Bool {
+    print("Looking for a sum of \(num)")
+    var complements = Set<Int>()
+    var iterationCount = 0
+    for number in numberList {
+        iterationCount += 1
+        let complement = num - number
+        if complements.contains(number) {
+            print("Found \(number) + \(complement) = \(num)")
+            print("Iteration Count: \(iterationCount)\n")
+            return true
+        } else {
+            complements.insert(complement)
+        }
+    }
+    print("returning FALSE")
+    print("Iteration Count: \(iterationCount)\n")
+    return false
+}
+
+print("Now the efficient way (in an unordered list")
+findSumInUnordered(7, inList: numberList)
+findSumInUnordered(22, inList: numberList)
+findSumInUnordered(27, inList: numberList)

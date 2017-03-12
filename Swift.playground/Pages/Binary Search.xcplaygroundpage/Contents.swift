@@ -1,4 +1,6 @@
-//: # Binary Search Algorithm
+/*: # Binary Search Algorithm
+ Given an array of sorted numbers, use a binary search to find a given integer in the array.
+ */
 
 func binarySearch(num: Int, array: [Int] ) -> Bool {
     var leftIndex = 0
